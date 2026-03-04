@@ -1,0 +1,24 @@
+# FastAPI & server
+fastapi>=0.109.0
+uvicorn[standard]>=0.27.0
+
+# Database
+sqlalchemy[asyncio]>=2.0.0
+asyncpg>=0.29.0
+psycopg2-binary>=2.9.0
+alembic>=1.13.0
+
+# Config & validation
+pydantic[email]>=2.5.0
+pydantic-settings>=2.1.0
+
+# Auth
+python-jose[cryptography]>=3.3.0
+passlib[bcrypt]>=1.7.4
+
+# File upload & PDF
+python-multipart>=0.0.6
+reportlab>=4.0.0
+
+# Optional: QR in PDF (reportlab can render QR with reportlab-graphics)
+# reportlab-graphics  # if needed for QR
