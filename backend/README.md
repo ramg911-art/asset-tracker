@@ -46,6 +46,15 @@ Production-grade FastAPI backend with PostgreSQL, SQLAlchemy 2.0, Alembic, Pydan
    API: http://127.0.0.1:8000  
    Docs: http://127.0.0.1:8000/docs  
 
+   **Access from another machine (e.g. frontend on 192.168.10.216:8082):** bind to all interfaces:
+
+   ```bash
+   uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
+   ```
+
+   Then open **http://192.168.10.216:8000/health** in a browser. You should see `{"status":"ok"}`. If you get 404, the process on port 8000 is not this app (wrong server or port).  
+   Optional: set `CORS_ORIGINS=http://192.168.10.216:8082,http://localhost:8082` in backend `.env` to restrict CORS to your frontend origins.
+
 ## Project layout
 
 ```

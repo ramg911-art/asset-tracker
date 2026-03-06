@@ -27,6 +27,9 @@ class Settings(BaseSettings):
     algorithm: str = "HS256"
     access_token_expire_minutes: int = 30
 
+    # CORS (comma-separated origins, or "*" for all; e.g. http://192.168.10.216:8082,http://localhost:3000)
+    cors_origins: str = "*"
+
     # File storage (local)
     upload_dir: str = "uploads"
     max_upload_size_mb: int = 10

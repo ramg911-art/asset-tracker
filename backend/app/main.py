@@ -42,12 +42,15 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
+# CORS: use config list or ["*"]; with "*" avoid credentials to satisfy strict CORS
+_cors_origins = [o.strip() for o in settings.cors_origins.split(",") if o.strip()] if settings.cors_origins != "*" else ["*"]
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=_cors_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
+    expose_headers=["*"],
 )
 
 # Auth (no prefix for /auth)
