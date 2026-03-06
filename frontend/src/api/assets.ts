@@ -1,4 +1,4 @@
-import { apiGet, apiPost, apiPatch, apiDelete } from './client'
+import { apiGet } from './client'
 
 export interface Asset {
   id: number
